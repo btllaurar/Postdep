@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "NmpWP7XkvQsbxpLHigGAw",
+      "name": "Http Request",
+      "action": {
+        "key": "42i2YrG9x2DyAJQ9AvjTwZ",
+        "type": "http-request",
+        "properties": {
+          "Method": "GET",
+          "Body": "{\"Content\":\"\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Url": "{{base-url}}/AnalyticsResult/4",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"lauras\",\"password\":\"Btlgroup1!\",\"properties\":{}}}",
+          "Headers": "[{\"Authorization\":\"Basic bGF1cmFzOkJ0bGdyb3VwMSE=\"}]",
+          "Timeout": 10000
+        }
+      },
+      "verifications": [
+        {
+          "key": "3gINh476ENjFzUeOu9nMEB",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "200"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}
