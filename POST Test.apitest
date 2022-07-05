@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "7oqdBwC9zpo7Ynq9biRafd",
+      "name": "Http Request",
+      "action": {
+        "key": "6pgakRksRdE2sxDlKAaNGL",
+        "type": "http-request",
+        "properties": {
+          "Method": "POST",
+          "Body": "{\"Content\":\"<test xmlns:i=\\\"http://www.w3.org/2001/XMLSchema-instance\\\">\\r\\n  <name>API Test RP3</name>  \\r\\n  <reference>APIT3</reference>\\r\\n  <subject>\\r\\n    <id>280</id>\\r\\n    <reference>BTL DFT</reference>\\r\\n  </subject>\\r\\n</test>\\r\\n\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Url": "{{base-url}}/Test",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"rickp\",\"password\":\"Euphoria1!\",\"properties\":{}}}",
+          "Headers": "[{\"Authorization\":\"Basic cmlja3A6RXVwaG9yaWExIQ==\"},{\"Content-Type\":\"application/xml\"}]",
+          "Timeout": 10000
+        }
+      },
+      "verifications": [
+        {
+          "key": "6sfbv5FhzbjkvmfYhePoLJ",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "200"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}

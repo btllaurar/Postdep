@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "1CAeaCf265T5tcVOf8v4li",
+      "name": "Http Request",
+      "action": {
+        "key": "1Uxr6SsOvyQsmz85KLQu5b",
+        "type": "http-request",
+        "properties": {
+          "Method": "PUT",
+          "Body": "{\"Content\":\"<centre xmlns:i=\\\"http://www.w3.org/2001/XMLSchema-instance\\\">\\r\\n  <addressLine1>sample string 3</addressLine1>\\r\\n  <addressLine2>sample string 4</addressLine2>\\r\\n  <country>\\r\\n    <id>0</id>\\r\\n  </country>\\r\\n  <county>\\r\\n    <id>1</id>\\r\\n  </county>\\r\\n  <excludeItemStatistics>false</excludeItemStatistics>\\r\\n  <hideSubjectsIncludedInSubjectGroups>false</hideSubjectsIncludedInSubjectGroups>\\r\\n  <postCode>AA11 2zf</postCode>\\r\\n  <primaryContact>\\r\\n    <reference>sample string 1</reference>\\r\\n    <id>1</id>\\r\\n  </primaryContact>\\r\\n  <randomiseTestForms>true</randomiseTestForms>\\r\\n  <technicalContact>\\r\\n    <reference>sample string 1</reference>\\r\\n    <id>1</id>\\r\\n  </technicalContact>\\r\\n  <town>sample string 5</town>\\r\\n  <name>sample string 1</name>\\r\\n  <reference>121020</reference>\\r\\n  <status>Active</status>\\r\\n</centre>\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Url": "{{base-url}}/Centre?reference=APIT310719X2",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"richardp\",\"password\":\"Euphoria1!\",\"properties\":{}}}",
+          "Headers": "[{\"Authorization\":\"Basic cmljaGFyZHA6RXVwaG9yaWExIQ==\"},{\"Content-Type\":\"application/xml\"},{\"postIfNew\":\"true\"}]",
+          "Timeout": 10000
+        }
+      },
+      "verifications": [
+        {
+          "key": "u7fe08tmyVge0U4fUvckW",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "201"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}

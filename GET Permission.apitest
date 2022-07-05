@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "4V6fmDa4XmsgDXjmN4be4d",
+      "name": "Http Request",
+      "action": {
+        "key": "35W82HNRhAKBKBr7cPcYpn",
+        "type": "http-request",
+        "properties": {
+          "Method": "GET",
+          "Body": "{\"Content\":\"\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Url": "{{base-url}}/Permission",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"rickp\",\"password\":\"Euphoria1!\",\"properties\":{}}}",
+          "Headers": "[{\"Authorization\":\"Basic cmlja3A6RXVwaG9yaWExIQ==\"}]",
+          "Timeout": 10000
+        }
+      },
+      "verifications": [
+        {
+          "key": "6T7eT3EytL4ShSBtO1BwSR",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "200"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}

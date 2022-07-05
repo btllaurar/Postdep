@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "6m6boKPGJni4yMiSBxmpqK",
+      "name": "Http Request",
+      "action": {
+        "key": "2C4wKrbdeawIGYIfoyy7pv",
+        "type": "http-request",
+        "properties": {
+          "Method": "POST",
+          "Body": "{\"Content\":\"<user xmlns:i=\\\"http://www.w3.org/2001/XMLSchema-instance\\\">\\r\\n  <firstName>Rick</firstName>\\r\\n  <lastName>Powell52</lastName>\\r\\n  <email>richard.powell@btl.com</email>\\r\\n  <userPermissions>\\r\\n    <userPermission>\\r\\n      <centre>\\r\\n        <reference>APITest</reference>\\r\\n     </centre>\\r\\n      <subject>\\r\\n        <reference>APITest1</reference>\\r\\n      </subject>\\r\\n      <permission>\\r\\n        <id>7</id>\\r\\n        <assignable>true</assignable>\\r\\n      </permission>\\r\\n    </userPermission>\\r\\n  </userPermissions>\\r\\n  <reference>LauraAPI280322</reference>\\r\\n</user>\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Url": "{{base-url}}/User",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"rickp\",\"password\":\"Euphoria1!\",\"properties\":{}}}",
+          "Headers": "[{\"Authorization\":\"Basic cmlja3A6RXVwaG9yaWExIQ==\"},{\"Content-Type\":\"application/xml\"},{\"Cache-Control\":\"no-cache\"},{\"Accept\":\"*/*\"}]",
+          "Timeout": 10000
+        }
+      },
+      "verifications": [
+        {
+          "key": "6auGTljF0bBPdEtLq1Bbye",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "200"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}

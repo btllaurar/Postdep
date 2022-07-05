@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "4lw0xbk8ZpoZ9twTJJSdmE",
+      "name": "Http Request",
+      "action": {
+        "key": "GyblYZ4DX71oVzCYeO4GX",
+        "type": "http-request",
+        "properties": {
+          "Method": "POST",
+          "Body": "{\"Content\":\"{\\r\\n  \\\"centre\\\": {\\r\\n    \\\"reference\\\": \\\"040520\\\"\\r\\n  },\\r\\n  \\\"subject\\\": {\\r\\n    \\\"reference\\\": \\\"211020\\\"\\r\\n  },\\r\\n  \\\"primary\\\": false,\\r\\n  \\\"permissions\\\": [\\r\\n    {\\r\\n      \\\"id\\\": 13,\\r\\n      \\\"assignable\\\": true\\r\\n    },\\r\\n     ]\\r\\n}\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Url": "{{base-url}}/CentreSubjectAssociation",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"rickp\",\"password\":\"Euphoria1!\",\"properties\":{}}}",
+          "Headers": "[{\"Authorization\":\"Basic cmlja3A6RXVwaG9yaWExIQ==\"},{\"Content-Type\":\"application/json\"}]",
+          "Timeout": 10000
+        }
+      },
+      "verifications": [
+        {
+          "key": "390Ht9hrBs9uVU2mRDQPah",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "200"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}

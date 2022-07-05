@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "3hPVNRfAGdRN9veT2Kpc25",
+      "name": "Http Request",
+      "action": {
+        "key": "cpAKEGs51CGUlB7TS1sTY",
+        "type": "http-request",
+        "properties": {
+          "Method": "PUT",
+          "Body": "{\"Content\":\"<user xmlns:i=\\\"http://www.w3.org/2001/XMLSchema-instance\\\">\\r\\n  <firstName>laura</firstName>\\r\\n  <lastName>sorgers</lastName>\\r\\n  <email>laura.sorges@btl.com</email>\\r\\n  <userPermissions>\\r\\n    <userPermission>\\r\\n      <centre>\\r\\n        <reference>011019</reference>\\r\\n     </centre>\\r\\n      <subject>\\r\\n        <reference>DTHTML</reference>\\r\\n      </subject>\\r\\n      <permission>\\r\\n        <id>1</id>\\r\\n        <assignable>true</assignable>\\r\\n      </permission>\\r\\n    </userPermission>\\r\\n  </userPermissions>\\r\\n  <reference>RickPNew241019X8</reference>\\r\\n</user>\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Url": "{{base-url}}/User?reference=RickPNew310719X2",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"rickp\",\"password\":\"Euphoria1!\",\"properties\":{}}}",
+          "Headers": "[{\"Authorization\":\"Basic cmlja3A6RXVwaG9yaWExIQ==\"},{\"Content-Type\":\"application/xml\"},{\"postIfNew\":\"true\"}]",
+          "Timeout": 10000
+        }
+      },
+      "verifications": [
+        {
+          "key": "5PypKhcx7BaVfnlFqd3S8g",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "201"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}

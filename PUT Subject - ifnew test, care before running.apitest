@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "IrKNLI48KsMHEbxmYqT1",
+      "name": "Http Request",
+      "action": {
+        "key": "3BV1KYp7L37Eom5ZslmLZE",
+        "type": "http-request",
+        "properties": {
+          "Method": "PUT",
+          "Body": "{\"Content\":\"{\\r\\n  \\\"reference\\\": \\\"RTS121020\\\",\\r\\n  \\\"name\\\": \\\"Laura APITest Subject 121020\\\",\\r\\n  \\\"primaryCentre\\\": {\\r\\n    \\\"id\\\": 300,\\r\\n  },\\r\\n    \\\"deliveryType\\\": \\\"OnScreen\\\"\\r\\n}\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"rickp\",\"password\":\"Euphoria1!\",\"properties\":{}}}",
+          "Headers": "[{\"Authorization\":\"Basic cmlja3A6RXVwaG9yaWExIQ==\"},{\"Content-Type\":\"application/json\"},{\"postIfNew\":\"true\"}]",
+          "Timeout": 10000,
+          "Url": "{{base-url}}/Subject?reference=221019"
+        }
+      },
+      "verifications": [
+        {
+          "key": "63AqWeM0vK4jhjo4BDlJ4q",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "201"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}

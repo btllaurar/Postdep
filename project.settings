@@ -1,0 +1,6 @@
+{
+  "$version": "project-settings/v1",
+  "variables": {
+    "base-url": "https://postdeployed.btlsurpass.com/api/v2"
+  }
+}

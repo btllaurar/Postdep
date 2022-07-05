@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "14oZ5EK9h8dxBn3wqRJXeA",
+      "name": "Http Request",
+      "action": {
+        "key": "7EsRf4H8vBjwt9oWIs08zE",
+        "type": "http-request",
+        "properties": {
+          "Method": "POST",
+          "Body": "{\"Content\":\"<candidate xmlns:i=\\\"http://www.w3.org/2001/XMLSchema-instance\\\">\\r\\n  <centres>\\r\\n    <centre>\\r\\n      <reference>QnvcAsImqVm0</reference>\\r\\n    </centre>\\r\\n   </centres>\\r\\n  <dateOfBirth>1990-08-05</dateOfBirth>\\r\\n  <email>email@btl.com</email>\\r\\n  <firstName>Tester</firstName>\\r\\n  <isExternal>true</isExternal>\\r\\n  <lastName>Testerson</lastName>\\r\\n  <reasonableAdjustments>true</reasonableAdjustments>\\r\\n  <retired>false</retired>\\r\\n  <subjects>\\r\\n    <subject>\\r\\n      <reference>BTLHTMLS</reference>\\r\\n    </subject>\\r\\n    </subjects>\\r\\n  <tеl>01274 203 270</tеl>\\r\\n  <reference>lauraAPInewcan3</reference>\\r\\n</candidate>\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"rickp\",\"password\":\"Euphoria1!\",\"properties\":{}}}",
+          "Headers": "[{\"Authorization\":\"Basic cmlja3A6RXVwaG9yaWExIQ==\"},{\"Content-Type\":\"application/xml\"}]",
+          "Url": "{{base-url}}/Candidate",
+          "Timeout": 10000
+        }
+      },
+      "verifications": [
+        {
+          "key": "4OOs5XK9HluaAzBdNyt0xa",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "200"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}

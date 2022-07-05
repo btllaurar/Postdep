@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "4LDDPPhiNkjveKuXf8q1HI",
+      "name": "Http Request",
+      "action": {
+        "key": "7yuCXYvtZbcVpjO2vob15l",
+        "type": "http-request",
+        "properties": {
+          "Method": "POST",
+          "Body": "{\"Content\":\"<basicPage xmlns:i=\\\"http://www.w3.org/2001/XMLSchema-instance\\\">\\r\\n  <additionalContentType>RichText</additionalContentType>\\r\\n  <additionalHtmlText>Please follow the instructions attached</additionalHtmlText>\\r\\n  <additionalMathMl></additionalMathMl>\\r\\n  <allowOpenImageInPopup>false</allowOpenImageInPopup>\\r\\n  <comment>First draft of introduction page</comment>\\r\\n  <contentType>RichText</contentType>\\r\\n  <htmlText>Welcome to the BTL Exam</htmlText>\\r\\n  <mathMl></mathMl>\\r\\n  <mediaLayout>RightTitle</mediaLayout>\\r\\n  <name>IntroPage1</name>\\r\\n  <status>Draft</status>\\r\\n  <subject>\\r\\n    <reference>RTS270217</reference>\\r\\n  </subject>\\r\\n  <type>IntroductionPage</type>\\r\\n</basicPage>\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Headers": "[{\"Content-Type\":\"application/xml\"},{\"Authorization\":\"Basic cmlja3A6RXVwaG9yaWExIQ==\"}]",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"rickp\",\"password\":\"Euphoria1!\",\"properties\":{}}}",
+          "Url": "{{base-url}}/BasicPage",
+          "Timeout": 10000
+        }
+      },
+      "verifications": [
+        {
+          "key": "5VDxKkxAXKIod5Ep1Texbz",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "200"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}

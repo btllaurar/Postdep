@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "2FDGCKLveXy2z63jkTf6JZ",
+      "name": "Http Request",
+      "action": {
+        "key": "56IsWn95OFsxkuIxgvRi80",
+        "type": "http-request",
+        "properties": {
+          "Method": "POST",
+          "Body": "{\"Content\":\"{\\r\\n  \\\"name\\\": \\\"Human marked Q5559\\\",\\r\\n  \\\"subject\\\": {\\r\\n    \\\"reference\\\": \\\"240220\\\"\\r\\n  },\\r\\n  \\\"isBroadcasted\\\": true,\\r\\n  \\\"items\\\": [\\r\\n    {\\r\\n      \\\"id\\\": 55210,\\r\\n      \\\"reference\\\": \\\"sample string 1\\\"\\r\\n    },\\r\\n    {\\r\\n      \\\"id\\\": 55212,\\r\\n      \\\"reference\\\": \\\"sample string 1\\\"\\r\\n    }\\r\\n  ],\\r\\n  \\\"reference\\\": \\\"211021\\\"\\r\\n}\\r\\n\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"rickp\",\"password\":\"Euphoria1!\",\"properties\":{}}}",
+          "Headers": "[{\"Authorization\":\"Basic cmlja3A6RXVwaG9yaWExIQ==\"},{\"Content-Type\":\"application/json\"}]",
+          "Url": "{{base-url}}/ItemList",
+          "Timeout": 10000
+        }
+      },
+      "verifications": [
+        {
+          "key": "LXd3K6QTGIiKsV9odM9yz",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "200"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}

@@ -1,0 +1,36 @@
+{
+  "$version": "test-case/v1",
+  "steps": [
+    {
+      "key": "1ueigRNBeJadFezgikvVUq",
+      "name": "Http Request",
+      "action": {
+        "key": "7jTtRVkLCwTvZZSsDRLUV4",
+        "type": "http-request",
+        "properties": {
+          "Method": "POST",
+          "Body": "{\"Content\":\"<generalTask xmlns:i=\\\"http://www.w3.org/2001/XMLSchema-instance\\\">\\r\\n  <reference>API TT71</reference>\\r\\n  <name>API Test Task 62</name>\\r\\n  <description>Laura API testing</description>\\r\\n  <startDate>2020-10-21T10:38:08.6610204+00:00</startDate>\\r\\n  <expiryDate>2021-10-25T11:38:08.6610204+00:00</expiryDate>\\r\\n  <executor>\\r\\n    <reference>sample string 1</reference>\\r\\n    <id>2</id>\\r\\n  </executor>\\r\\n  <subject>\\r\\n    <reference>240220</reference>\\r\\n  </subject>\\r\\n</generalTask>\",\"FilePath\":null,\"Mode\":\"raw\"}",
+          "Url": "{{base-url}}/GeneralTask",
+          "Authorization": "{\"mode\":\"basic\",\"properties\":{\"username\":\"rickp\",\"password\":\"Euphoria1!\",\"properties\":{}}}",
+          "Headers": "[{\"Authorization\":\"Basic cmlja3A6RXVwaG9yaWExIQ==\"},{\"Content-Type\":\"application/xml\"}]",
+          "Timeout": 10000
+        }
+      },
+      "verifications": [
+        {
+          "key": "1vUcxl0PfN6wZGYbapXmqL",
+          "type": "verify",
+          "properties": {
+            "SourceVariable": "StatusCode",
+            "SourcePathType": "jsonpath",
+            "OperationType": "is-equal-number",
+            "IgnoreCase": false,
+            "SourcePath": null,
+            "Expectation": "200"
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {}
+}
